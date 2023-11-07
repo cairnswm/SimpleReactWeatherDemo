@@ -1,8 +1,20 @@
-import { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-const locationContext = createContext({
-  location: false,
-  setLocation: (locationName) => {}
-});
+// create context
+const LocationContext = createContext();
 
-export default locationContext;
+const LocationProvider = (props) => {
+  const { children } = props;
+
+  const [location, setLocation] = useState();
+
+  return (
+    // the Provider gives access to the context to its children
+    <LocationContext.Provider value={{location, setLocation}}>
+      {children}
+    </LocationContext.Provider>
+  );
+};
+
+export { LocationContext, LocationProvider };
+export default LocationProvider;

@@ -1,9 +1,9 @@
-import { useState, useContext } from "react";
-import ContactContext from './locationContext'
+import { useState } from "react";
+import { useLocation } from "./useLocation";
 
 function Header(props) {
     const [locationName, setLocationName] = useState("")
-    const { setLocation } = useContext(ContactContext)
+    const { setLocation } = useLocation()
 
     const doSearch = () => {
         console.log("location",locationName)
