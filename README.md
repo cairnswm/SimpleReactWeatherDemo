@@ -1,3 +1,3 @@
 # SimpleReactWeatherDemo
 
-Used to show some key React concepts to a develop group at work.
+A starter project to show basic react concepts
